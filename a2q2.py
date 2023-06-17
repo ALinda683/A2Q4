@@ -16,9 +16,9 @@
 ###############################################################################
 
 # TODO: Fill in your information below
-# Student Name
-# NSID
-# Student Number
+# Student Name : Alinda Kumar Mazumder
+# NSID: ugj683
+# Student Number: 11342454
 
 ################### DO NOT ALTER CODE BELOW ###################################
 def gcd(val1: int, val2: int) -> int:
