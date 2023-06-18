@@ -17,13 +17,14 @@
 ###############################################################################
 
 # TODO: Fill in your information below
-# Student Name
-# NSID
-# Student Number
+# Student Name: Alinda Kumar Mazumder
+# NSID: ugj683
+# Student Number: 11342454
 
 # Recall another name for a list of dictionaries is a record.
 
 # TODO: PART A - Find and Fix Errors
+# Error found: # This function does not perform a deep copy of the list. Instead, it only creates a new reference to the same list object, which means that modifying the new_list will also modify the original list.
 def copy_list_of_lists(data: list) -> list:
     """
     Purpose: Deep copy a list passed in
