@@ -50,26 +50,34 @@ def copy_list_of_lists(data: list) -> list:
     return new_list
 # After making this change, the copy_list_of_lists function will perform a deep copy as intended, creating a new list with new internal lists.
 
-
+# Error found: The loop in the copy_dict_of_dicts function is not correctly copying the dictionary. It checks if data[element] is equal to data, which is not the correct way to check if a value is a dictionary.
+# def copy_dict_of_dicts(data: dict) -> dict:
+#     """
+#     Purpose: Deep copy the dictionary passed in.
+#     Pre-conditon:
+#         :param data: dict() - dictionary to be copied,
+#             data can have values that are dictionaries,
+#             with a maximum depth of 2 {"OuterKey":{"innerKey":"InnerValue"}}.
+#     Post Condition:
+#         None, original data should be unaltered.
+#     Return:
+#         dict - a new dictionary with new internal dictionaries created by copying the
+#      information from the list passed in.
+#     """
+#     new_dict = {}
+#     for element in data:
+#         if data[element] is data:
+#             new_dict[element] = data[element]
+#     return new_dict
 def copy_dict_of_dicts(data: dict) -> dict:
-    """
-    Purpose: Deep copy the dictionary passed in.
-    Pre-conditon:
-        :param data: dict() - dictionary to be copied,
-            data can have values that are dictionaries,
-            with a maximum depth of 2 {"OuterKey":{"innerKey":"InnerValue"}}.
-    Post Condition:
-        None, original data should be unaltered.
-    Return:
-        dict - a new dictionary with new internal dictionaries created by copying the
-     information from the list passed in.
-    """
     new_dict = {}
-    for element in data:
-        if data[element] is data:
-            new_dict[element] = data[element]
+    for key, value in data.items():
+        if isinstance(value, dict):
+            new_dict[key] = copy_dict_of_dicts(value)  # Recursively copy nested dictionaries
+        else:
+            new_dict[key] = value  # Copy non-dictionary values
     return new_dict
-
+# This updated code will perform a deep copy of the dictionary data, creating a new dictionary with new internal dictionaries that are copies of the original ones.
 
 # TODO PART B - Implement the following functions based on the description
 
