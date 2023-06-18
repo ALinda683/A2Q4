@@ -25,20 +25,31 @@
 
 # TODO: PART A - Find and Fix Errors
 # Error found: # This function does not perform a deep copy of the list. Instead, it only creates a new reference to the same list object, which means that modifying the new_list will also modify the original list.
+# def copy_list_of_lists(data: list) -> list:
+#     """
+#     Purpose: Deep copy a list passed in
+#     Pre-conditon:
+#         :param data : list - list to be copied,
+#             list can be nested, with a max list depth of 2 [[],[],..].
+#     Post Condition:
+#         None, original data should be unaltered.
+#     Return:
+#         list - a new list with new internal lists created by copying the
+#      information from the list passed in.
+#     """
+#     new_list = data
+#     return new_list
+
+import copy
+
 def copy_list_of_lists(data: list) -> list:
-    """
-    Purpose: Deep copy a list passed in
-    Pre-conditon:
-        :param data : list - list to be copied,
-            list can be nested, with a max list depth of 2 [[],[],..].
-    Post Condition:
-        None, original data should be unaltered.
-    Return:
-        list - a new list with new internal lists created by copying the
-     information from the list passed in.
-    """
-    new_list = data
+    new_list = []
+    for sublist in data:
+        new_sublist = sublist.copy()
+        new_list.append(new_sublist)
     return new_list
+# After making this change, the copy_list_of_lists function will perform a deep copy as intended, creating a new list with new internal lists.
+
 
 def copy_dict_of_dicts(data: dict) -> dict:
     """
