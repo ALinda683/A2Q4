@@ -91,7 +91,16 @@ def deep_copy_list_of_dicts(data:list) -> list:
     Return:
         list - deep copy of the list it's values are returned.
     """
-    return []
+    new_list = []
+    for item in data:
+        new_dict = {}
+        for key, value in item.items():
+            if isinstance(value, dict):
+                new_dict[key] = value.copy()
+            else:
+                new_dict[key] = value
+        new_list.append(new_dict)
+    return new_list
 
 def remove_from_2DList(data:list, val) -> list:
     """
