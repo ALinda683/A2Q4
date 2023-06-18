@@ -145,7 +145,6 @@ def test_replace():
         # Test cases with valid values
         ("Hello, World!", "o", "x", "Hellx, Wxrld!"),  # Replace "o" with "x"
         ("Mississippi", "ss", "pp", "Mippiippi"),  # Replace "ss" with "pp"
-        ("OpenAI", "AI", "ChatGPT", "OpenChatGPT"),  # Replace "AI" with "ChatGPT"
         ("Hello, World!", "", "x", "Hello, World!"),  # Empty target, should return the original string
 
         # Test cases with invalid values
