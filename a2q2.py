@@ -227,3 +227,11 @@ def test_sort_students_into_grades():
         print("PASS: Student list with valid and invalid grades")
     else:
         print("FAIL: Student list with valid and invalid grades")
+
+
+def test_whitebox_functions():
+    test_gcd()
+    test_replace()
+    test_grade_letter()
+
+
