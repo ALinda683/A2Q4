@@ -235,3 +235,7 @@ def test_whitebox_functions():
     test_grade_letter()
 
 
+def test_blackbox_functions():
+    test_sort_students_into_grades()
+
+
